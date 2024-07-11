@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { NavigationType } from '../config/navigation';
 import NavigationMenuItemStyled from './NavigationMenuItemStyled';
 
@@ -6,7 +7,11 @@ interface NavigationMenuItemProps {
 }
 
 function NavigationMenuItem({ item }: NavigationMenuItemProps) {
-  return <NavigationMenuItemStyled>{item.label}</NavigationMenuItemStyled>;
+  return (
+    <Link to={item.url}>
+      <NavigationMenuItemStyled>{item.label}</NavigationMenuItemStyled>
+    </Link>
+  );
 }
 
 export default NavigationMenuItem;

@@ -23,6 +23,9 @@ function Login() {
 
   useEffect(() => {
     console.log(userContext?.data);
+    if (userContext?.data?.user) {
+      navigate('/home');
+    }
   }, [userContext]);
 
   return (

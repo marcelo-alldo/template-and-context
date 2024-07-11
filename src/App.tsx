@@ -1,15 +1,18 @@
 import GlobalStyled from './config/GlobalStyled';
 import DefaultTheme from './config/theme/DefaultTheme';
+import ContactsProvider from './contexts/ContactsContext';
 import UserProvider from './contexts/UserContext';
 import AppRoutes from './routes/AppRoutes';
 
 function App() {
   return (
     <UserProvider>
-      <DefaultTheme>
-        <AppRoutes />
-        <GlobalStyled />
-      </DefaultTheme>
+      <ContactsProvider>
+        <DefaultTheme>
+          <AppRoutes />
+          <GlobalStyled />
+        </DefaultTheme>
+      </ContactsProvider>
     </UserProvider>
   );
 }

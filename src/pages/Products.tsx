@@ -15,19 +15,12 @@ function Products() {
       setList([...list, name]);
       setName('');
       openModal();
-      openFeedBack();
+      setShowFeedBack(true);
     }
   }
 
   function openModal() {
     setShowModal(!showModal);
-  }
-
-  function openFeedBack() {
-    setShowFeedBack(!showFeedBack);
-    setTimeout(() => {
-      setShowFeedBack(false);
-    }, 2000);
   }
 
   return (
@@ -48,7 +41,7 @@ function Products() {
           content="Você realmente deseja cadastrar o produto?"
         />
       )}
-      {showFeedBack && <FeedBack msg="Produto criado com sucesso!" />}
+      <FeedBack show={showFeedBack} setShow={setShowFeedBack} msg="Produto criado com sucesso!" />
     </>
   );
 }
